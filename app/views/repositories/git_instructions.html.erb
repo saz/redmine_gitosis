@@ -14,7 +14,7 @@ git config --global user.email <%= User.current.mail %></pre></div>
 
     <h3>Permission Setup:</h3>
     <p><%= link_to "Upload SSH public key", {:controller => "my", :action => "public_keys"} %></p>
-    <p>Add yourself as a project developer: <%= link_to "#{@project.name} Settings", {:controller => "projects", :actions => "settings"} %> -&gt; Members Tab -&gt; New Member</p>
+    <p>Add yourself as a project developer: <%= link_to "#{@project.name} Settings", {:controller => 'projects', :action => 'settings', :id => @project} %> -&gt; Members Tab -&gt; New Member</p>
 
     <h3>Repository Setup:</h3>
     <div class="pygments"><pre>mkdir <%= @project.identifier %>
