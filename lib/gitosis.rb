@@ -3,6 +3,10 @@ require 'inifile'
 
 module Gitosis
 
+  def self.logger
+    RAILS_DEFAULT_LOGGER
+  end
+
   def self.repository_name(project)
     parent_name = project.parent ? repository_name(project.parent) + "/" : ""
     name = project.identifier
