@@ -10,11 +10,13 @@
         <% end %>
     </ul>
 
+    <% if User.anonymous.allowed_to?( :view_changesets, @project) %>
     <h4>Read-Only URL</h4>
     <ul>
         <% repo_urls[:read_only].each do |url| %>
         <li><%= url %></li>
         <% end %>
     </ul>
+    <% end %>
 </div>
 <% end %>
