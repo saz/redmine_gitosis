@@ -3,7 +3,7 @@
 <%= error_messages_for :gitosis_public_key %>
 
 <% form_for :public_key, @gitosis_public_key, :url => { :action => "update" }, :html => { :method => :put},
-                          :builder => TabularFormBuilder, 
+                          :builder => Redmine::Views::LabelledFormBuilder,
                           :lang => current_language do |f| %>
 
 	<%= render :partial => 'form', :locals => { :f => f } %>
