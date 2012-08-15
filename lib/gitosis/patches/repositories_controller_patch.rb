@@ -13,7 +13,9 @@ module Gitosis
       
       def edit_with_scm_settings
         params[:repository] ||= {}
-        params[:repository][:url] = File.join(Setting.plugin_redmine_gitosis['basePath'], Gitosis.repository_name(@project) + ".git") if params[:repository_scm] == 'Git'
+        if params[:repository_scm] == 'Git'
+            params[:repository][:url] = File.join(Setting.plugin_redmine_gitosis['basePath'], Gitosis.repository_name(@project) + ".git")
+        end
         edit_without_scm_settings
       end
 
